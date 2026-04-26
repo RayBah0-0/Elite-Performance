@@ -49,11 +49,12 @@ body {
 /* Typography Utilities */
 h1, h2, h3, h4, h5, h6 {
     font-family: var(--font-display);
-    line-height: 1.1;
+    line-height: 1.25;
     font-weight: 900;
     text-transform: uppercase;
     letter-spacing: -0.03em;
     font-style: italic;
+    padding-bottom: 0.1em; /* Extra space for descenders */
 }
 
 .font-display { font-family: var(--font-display); }
@@ -65,10 +66,16 @@ h1, h2, h3, h4, h5, h6 {
 .tracking-widest { letter-spacing: 0.1em; }
 
 .text-gradient {
-    background: linear-gradient(to right, #ffb3b1, var(--primary));
+    background: linear-gradient(to right, var(--primary), #8ea6ff);
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
     background-clip: text;
+    display: inline-block;
+    padding-right: 0.15em;
+    margin-right: -0.15em;
+    padding-left: 0.05em;
+    margin-left: -0.05em;
+    vertical-align: bottom;
 }
 
 .text-primary { color: var(--primary); }
@@ -144,12 +151,7 @@ h1, h2, h3, h4, h5, h6 {
     box-shadow: 0 0 15px rgba(0, 51, 160, 0.3);
 }
 
-.text-gradient {
-    background: linear-gradient(to right, var(--primary), #8ea6ff);
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-    background-clip: text;
-}
+/* consolidated with previous definition */
 
 .shadow-glow {
     box-shadow: 0 0 20px rgba(0, 51, 160, 0.3);

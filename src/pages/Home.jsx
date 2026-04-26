@@ -3,7 +3,7 @@ import { Link } from 'react-router-dom';
 
 export default function Home() {
   const [currentSlide, setCurrentSlide] = useState(0);
-  const slides = ['/public/Hero1.JPG', '/public/Hero2.JPG', '/public/Hero3.JPG', '/public/Hero4.JPG'];
+  const slides = ['/Hero1.JPG', '/Hero2.JPG', '/Hero3.JPG', '/Hero4.JPG'];
   const [activeFaq, setActiveFaq] = useState(null);
 
   const faqs = [
@@ -40,7 +40,7 @@ export default function Home() {
         
         <div className="hero-content container fade-in visible hero-split">
           <div className="hero-logo-container">
-            <img src="/public/Logo.PNG" alt="Elite Performance Logo" className="animate-pulse" />
+            <img src="/Logo.PNG" alt="Elite Performance Logo" className="animate-pulse" />
           </div>
           <div className="hero-text-container">
             <div className="hero-badges">
@@ -74,7 +74,7 @@ export default function Home() {
         </div>
       </section>
 
-      <section className="why-us-section py-section bg-image" style={{ backgroundImage: "linear-gradient(rgba(19, 19, 21, 0.9), rgba(19, 19, 21, 0.9)), url('/public/Main1.JPG')" }}>
+      <section className="why-us-section py-section bg-image" style={{ backgroundImage: "linear-gradient(rgba(19, 19, 21, 0.9), rgba(19, 19, 21, 0.9)), url('/Main1.JPG')" }}>
         <div className="container fade-in visible">
           <div className="section-header text-center">
             <h2>Why Choose <span className="text-gradient">Elite Performance</span></h2>
@@ -168,7 +168,7 @@ export default function Home() {
         </div>
       </section>
 
-      <section className="final-cta-section py-section bg-primary text-center" style={{ backgroundImage: "linear-gradient(rgba(214, 4, 47, 0.9), rgba(150, 2, 30, 0.95)), url('/public/Main2.JPG')", backgroundSize: 'cover', backgroundPosition: 'center' }}>
+      <section className="final-cta-section py-section bg-primary text-center" style={{ backgroundImage: "linear-gradient(rgba(214, 4, 47, 0.9), rgba(150, 2, 30, 0.95)), url('/Main2.JPG')", backgroundSize: 'cover', backgroundPosition: 'center' }}>
 
         <div className="container fade-in visible">
           <h2 className="font-display text-white text-5xl font-black italic uppercase tracking-tight mb-4">Ready to Get Your Athlete Ahead?</h2>

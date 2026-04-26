@@ -1,14 +1,14 @@
 export default function Gallery() {
   const images = [
-    '/public/showcase/1000001739.JPG',
-    '/public/showcase/1000001756.JPG',
-    '/public/showcase/1000001757.JPG',
-    '/public/showcase/1000001759.JPG',
-    '/public/showcase/1000001761.JPG',
-    '/public/showcase/1000001764.JPG',
-    '/public/showcase/1000001765.JPG',
-    '/public/showcase/1000001767.JPG',
-    '/public/showcase/1000001768.JPG',
+    '/showcase/1000001739.JPG',
+    '/showcase/1000001756.JPG',
+    '/showcase/1000001757.JPG',
+    '/showcase/1000001759.JPG',
+    '/showcase/1000001761.JPG',
+    '/showcase/1000001764.JPG',
+    '/showcase/1000001765.JPG',
+    '/showcase/1000001767.JPG',
+    '/showcase/1000001768.JPG',
   ];
 
   return (
