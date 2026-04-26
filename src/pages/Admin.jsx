@@ -26,7 +26,8 @@ export default function Admin() {
 
   const handleLogin = (e) => {
     e.preventDefault();
-    if (password === 'elite2026') {
+    const adminPassword = import.meta.env.VITE_ADMIN_PASSWORD || 'elite2026';
+    if (password === adminPassword) {
       setIsAuthenticated(true);
     } else {
       alert('Incorrect Password');
