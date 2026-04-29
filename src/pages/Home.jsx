@@ -49,7 +49,7 @@ export default function Home() {
               <span className="badge pulse-badge"><span className="material-symbols-outlined">timer</span> Limited Spots Available</span>
             </div>
             <h1 className="hero-title">Build Faster, <span className="text-gradient">Stronger</span>, More <br/> Confident <span className="italic">Young Athletes</span></h1>
-            <p className="hero-subtitle">Speed, strength, and football-focused training for ages 7–14 — led by certified coaching in Hilton, NY.</p>
+            <p className="hero-subtitle">Speed, strength, agility, and football-focused training for ages 7–14 — led by certified coaching in Hilton, NY.</p>
             <div className="hero-actions">
               <Link to="/contact" className="btn btn-primary btn-large">
                 Reserve Your Spot Now
