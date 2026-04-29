@@ -1,0 +1,577 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Elite Performance — 90-Day Growth Roadmap</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;900&family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
+    <style>
+        :root {
+            --primary: #d6042f;
+            --primary-dark: #96021e;
+            --secondary: #131315;
+            --bg-darker: #0a0a0b;
+            --bg-lighter: #1a1a1c;
+            --text-main: #ffffff;
+            --text-dim: rgba(255, 255, 255, 0.7);
+            --text-muted: rgba(255, 255, 255, 0.5);
+            --border: rgba(255, 255, 255, 0.1);
+            --accent-blue: #378ADD;
+            --accent-teal: #1D9E75;
+            --accent-purple: #7F77DD;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            -webkit-font-smoothing: antialiased;
+        }
+
+        body {
+            font-family: 'Plus Jakarta Sans', sans-serif;
+            background-color: var(--bg-darker);
+            color: var(--text-main);
+            line-height: 1.6;
+            padding: 20px;
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        h1, h2, h3, h4 {
+            font-family: 'Outfit', sans-serif;
+            font-weight: 700;
+        }
+
+        /* Premium Header */
+        header {
+            text-align: center;
+            padding: 40px 20px;
+            background: linear-gradient(135deg, var(--bg-lighter) 0%, var(--bg-darker) 100%);
+            border-radius: 24px;
+            border: 1px solid var(--border);
+            margin-bottom: 30px;
+            position: relative;
+            overflow: hidden;
+        }
+
+        header::before {
+            content: '';
+            position: absolute;
+            top: -50%;
+            left: -50%;
+            width: 200%;
+            height: 200%;
+            background: radial-gradient(circle, rgba(214, 4, 47, 0.05) 0%, transparent 70%);
+            z-index: 0;
+        }
+
+        .logo-box {
+            position: relative;
+            z-index: 1;
+            margin-bottom: 20px;
+        }
+
+        .logo-box img {
+            height: 60px;
+            filter: drop-shadow(0 0 15px rgba(214, 4, 47, 0.3));
+        }
+
+        .header-tag {
+            display: inline-block;
+            background: rgba(214, 4, 47, 0.15);
+            color: var(--primary);
+            font-size: 12px;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            padding: 6px 16px;
+            border-radius: 100px;
+            margin-bottom: 12px;
+            border: 1px solid rgba(214, 4, 47, 0.3);
+        }
+
+        .header-title {
+            font-size: 32px;
+            font-weight: 900;
+            letter-spacing: -1px;
+            margin-bottom: 8px;
+            font-style: italic;
+        }
+
+        .header-subtitle {
+            font-size: 16px;
+            color: var(--text-dim);
+            max-width: 500px;
+            margin: 0 auto;
+        }
+
+        /* Overview Grid */
+        .metrics-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 16px;
+            margin-bottom: 40px;
+        }
+
+        .metric-card {
+            background: var(--bg-lighter);
+            padding: 20px;
+            border-radius: 16px;
+            border: 1px solid var(--border);
+            display: flex;
+            align-items: center;
+            gap: 15px;
+        }
+
+        .metric-icon {
+            width: 44px;
+            height: 44px;
+            background: rgba(255, 255, 255, 0.05);
+            border-radius: 12px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--primary);
+        }
+
+        .metric-info h4 {
+            font-size: 13px;
+            color: var(--text-muted);
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        .metric-info p {
+            font-size: 18px;
+            font-weight: 700;
+            color: var(--text-main);
+        }
+
+        /* Timeline Section */
+        .section-label {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            margin-bottom: 24px;
+        }
+
+        .section-label h2 {
+            font-size: 20px;
+            font-weight: 800;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        .line {
+            flex-grow: 1;
+            height: 1px;
+            background: var(--border);
+        }
+
+        .phase-container {
+            position: relative;
+            padding-left: 20px;
+            border-left: 2px solid var(--border);
+            margin-left: 10px;
+            margin-bottom: 40px;
+        }
+
+        .phase-card {
+            background: var(--bg-lighter);
+            border-radius: 20px;
+            border: 1px solid var(--border);
+            padding: 24px;
+            margin-bottom: 30px;
+            position: relative;
+            transition: transform 0.3s ease, border-color 0.3s ease;
+        }
+
+        .phase-card:hover {
+            transform: translateY(-5px);
+            border-color: rgba(255, 255, 255, 0.2);
+        }
+
+        .phase-card::before {
+            content: '';
+            position: absolute;
+            left: -31px;
+            top: 30px;
+            width: 20px;
+            height: 20px;
+            background: var(--bg-darker);
+            border: 4px solid var(--border);
+            border-radius: 50%;
+            z-index: 2;
+        }
+
+        .phase-1::before { border-color: var(--accent-blue); }
+        .phase-2::before { border-color: var(--accent-teal); }
+        .phase-3::before { border-color: var(--accent-purple); }
+
+        .phase-badge {
+            display: inline-flex;
+            align-items: center;
+            gap: 6px;
+            font-size: 12px;
+            font-weight: 700;
+            padding: 4px 12px;
+            border-radius: 100px;
+            margin-bottom: 16px;
+        }
+
+        .b-blue { background: rgba(55, 138, 221, 0.1); color: var(--accent-blue); }
+        .b-teal { background: rgba(29, 158, 117, 0.1); color: var(--accent-teal); }
+        .b-purple { background: rgba(127, 119, 221, 0.1); color: var(--accent-purple); }
+
+        .phase-title {
+            font-size: 20px;
+            margin-bottom: 8px;
+        }
+
+        .phase-desc {
+            font-size: 14px;
+            color: var(--text-dim);
+            margin-bottom: 20px;
+        }
+
+        .task-list {
+            display: grid;
+            gap: 12px;
+        }
+
+        .task-item {
+            background: rgba(255, 255, 255, 0.03);
+            border-radius: 12px;
+            padding: 16px;
+            display: flex;
+            gap: 16px;
+            border: 1px solid transparent;
+            transition: all 0.2s ease;
+        }
+
+        .task-item:hover {
+            background: rgba(255, 255, 255, 0.05);
+            border-color: var(--border);
+        }
+
+        .task-checkbox {
+            width: 20px;
+            height: 20px;
+            border: 2px solid var(--border);
+            border-radius: 6px;
+            flex-shrink: 0;
+            margin-top: 2px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .task-content h5 {
+            font-size: 15px;
+            font-weight: 600;
+            margin-bottom: 4px;
+        }
+
+        .task-content p {
+            font-size: 13px;
+            color: var(--text-dim);
+        }
+
+        .pro-tip {
+            margin-top: 15px;
+            padding: 10px 15px;
+            background: rgba(214, 4, 47, 0.05);
+            border-left: 3px solid var(--primary);
+            border-radius: 4px;
+            font-size: 12px;
+            display: flex;
+            gap: 10px;
+            align-items: center;
+        }
+
+        .pro-tip strong { color: var(--primary); text-transform: uppercase; font-size: 10px; letter-spacing: 1px; }
+
+        /* Future Roadmap Card */
+        .roadmap-card {
+            background: linear-gradient(135deg, rgba(127, 119, 221, 0.1) 0%, rgba(55, 138, 221, 0.1) 100%);
+            border-radius: 24px;
+            border: 1px solid rgba(127, 119, 221, 0.2);
+            padding: 30px;
+            margin-top: 50px;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .roadmap-card::after {
+            content: 'FUTURE';
+            position: absolute;
+            top: 20px;
+            right: -30px;
+            transform: rotate(45deg);
+            background: var(--accent-purple);
+            color: white;
+            font-size: 10px;
+            font-weight: 900;
+            padding: 5px 40px;
+        }
+
+        .roadmap-header {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+            margin-bottom: 20px;
+        }
+
+        .roadmap-header span {
+            font-size: 32px;
+            color: var(--accent-purple);
+        }
+
+        .roadmap-title {
+            font-size: 22px;
+            font-weight: 800;
+        }
+
+        .roadmap-content {
+            font-size: 15px;
+            color: var(--text-dim);
+            margin-bottom: 25px;
+        }
+
+        .roadmap-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 20px;
+        }
+
+        .roadmap-item {
+            background: rgba(0, 0, 0, 0.2);
+            padding: 15px;
+            border-radius: 12px;
+            border: 1px solid rgba(255, 255, 255, 0.05);
+        }
+
+        .roadmap-item h6 {
+            color: var(--accent-purple);
+            font-size: 12px;
+            text-transform: uppercase;
+            margin-bottom: 5px;
+        }
+
+        .roadmap-item p {
+            font-size: 13px;
+        }
+
+        footer {
+            text-align: center;
+            padding: 40px 0;
+            color: var(--text-muted);
+            font-size: 12px;
+        }
+
+        @media (max-width: 600px) {
+            .metrics-grid { grid-template-columns: 1fr; }
+            .header-title { font-size: 26px; }
+            .phase-card { padding: 16px; }
+            .task-item { padding: 12px; }
+        }
+
+        .pulse {
+            animation: pulse-animation 2s infinite;
+        }
+
+        @keyframes pulse-animation {
+            0% { box-shadow: 0 0 0 0px rgba(214, 4, 47, 0.4); }
+            100% { box-shadow: 0 0 0 10px rgba(214, 4, 47, 0); }
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <div class="logo-box">
+            <img src="/Logo.PNG" alt="Elite Performance">
+        </div>
+        <span class="header-tag">Strategic Growth Roadmap</span>
+        <h1 class="header-title">The 90-Day Performance Engine</h1>
+        <p class="header-subtitle">A high-impact, zero-investment strategy to scale enrollments, build trust, and dominate the Hilton youth training market.</p>
+    </header>
+
+    <div class="metrics-grid">
+        <div class="metric-card">
+            <div class="metric-icon"><span class="material-symbols-outlined">group_add</span></div>
+            <div class="metric-info">
+                <h4>Primary Goal</h4>
+                <p>Fill All 24 Spots</p>
+            </div>
+        </div>
+        <div class="metric-card">
+            <div class="metric-icon"><span class="material-symbols-outlined">trending_up</span></div>
+            <div class="metric-info">
+                <h4>Focus</h4>
+                <p>Profit Margin</p>
+            </div>
+        </div>
+        <div class="metric-card">
+            <div class="metric-icon"><span class="material-symbols-outlined">attach_money</span></div>
+            <div class="metric-info">
+                <h4>Investment</h4>
+                <p>$0.00 Required</p>
+            </div>
+        </div>
+    </div>
+
+    <div class="section-label">
+        <h2>Action Roadmap</h2>
+        <div class="line"></div>
+    </div>
+
+    <div class="phase-container">
+        
+        <!-- Phase 1 -->
+        <div class="phase-card phase-1">
+            <span class="phase-badge b-blue">
+                <span class="material-symbols-outlined" style="font-size: 16px;">verified</span>
+                Days 1–30: The Proof Engine
+            </span>
+            <h3 class="phase-title">Momentum & Social Proof</h3>
+            <p class="phase-desc">Focus on capturing the hard work and turning it into a "digital billboard" for parents.</p>
+            
+            <div class="task-list">
+                <div class="task-item">
+                    <div class="task-checkbox"></div>
+                    <div class="task-content">
+                        <h5>Raw Training Clips (Daily)</h5>
+                        <p>Film 10-15 seconds of athletes mid-drill. Post as Stories/Reels. Parents LOVE seeing their kids work hard and will share these instantly to their own followers.</p>
+                    </div>
+                </div>
+                <div class="task-item">
+                    <div class="task-checkbox"></div>
+                    <div class="task-content">
+                        <h5>Google Review Sprint</h5>
+                        <p>Text every current parent a direct link. Aim for 10+ reviews. This is the #1 factor for ranking "near me" searches for free.</p>
+                    </div>
+                </div>
+                <div class="task-item">
+                    <div class="task-checkbox"></div>
+                    <div class="task-content">
+                        <h5>Weekly "Athlete Spotlight"</h5>
+                        <p>Highlight one athlete's progress (speed improvement or skill win). Tag the parent. It creates an emotional connection and reaches their entire social circle.</p>
+                    </div>
+                </div>
+            </div>
+            <div class="pro-tip">
+                <span>💡</span>
+                <p><strong>Pro Tip:</strong> Don't worry about high-end video gear. "Raw" and "authentic" training footage converts better for local sports programs than polished ads.</p>
+            </div>
+        </div>
+
+        <!-- Phase 2 -->
+        <div class="phase-card phase-2">
+            <span class="phase-badge b-teal">
+                <span class="material-symbols-outlined" style="font-size: 16px;">hub</span>
+                Days 31–60: Local Network Dominance
+            </span>
+            <h3 class="phase-title">The Referral Flywheel</h3>
+            <p class="phase-desc">Infiltrate the local conversations where parents already spend their time.</p>
+            
+            <div class="task-list">
+                <div class="task-item">
+                    <div class="task-checkbox"></div>
+                    <div class="task-content">
+                        <h5>Facebook Community Presence</h5>
+                        <p>Join Hilton/Parma youth sports groups. Don't "sell"—just help. When a parent asks about training, respond with high value: "We see this a lot in our sessions, here is a drill we use..."</p>
+                    </div>
+                </div>
+                <div class="task-item">
+                    <div class="task-checkbox"></div>
+                    <div class="task-content">
+                        <h5>"Bring a Teammate" Week</h5>
+                        <p>Announce a specific week where current athletes can bring a friend for free. This doubles your "leads" in one week with zero ad spend.</p>
+                    </div>
+                </div>
+                <div class="task-item">
+                    <div class="task-checkbox"></div>
+                    <div class="task-content">
+                        <h5>League Partnership Outreach</h5>
+                        <p>Offer a "Free Skills Clinic" to a local team (Hilton Raiders, etc.). One hour of your time can secure 10+ seasonal enrollments.</p>
+                    </div>
+                </div>
+            </div>
+            <div class="pro-tip">
+                <span>🚀</span>
+                <p><strong>The Math:</strong> If 10 athletes bring 1 friend each, and only 30% sign up, you've added 3 recurring clients ($375-$600/mo) for zero cost.</p>
+            </div>
+        </div>
+
+        <!-- Phase 3 -->
+        <div class="phase-card phase-3">
+            <span class="phase-badge b-purple">
+                <span class="material-symbols-outlined" style="font-size: 16px;">payments</span>
+                Days 61–90: High-Value Conversion
+            </span>
+            <h3 class="phase-title">Scaling the Program</h3>
+            <p class="phase-desc">Shift from "getting clients" to "managing a waiting list" through scarcity.</p>
+            
+            <div class="task-list">
+                <div class="task-item">
+                    <div class="task-checkbox"></div>
+                    <div class="task-content">
+                        <h5>Lean into Scarcity</h5>
+                        <p>Start posting "X spots left for the 5-week program." When parents see a group is nearly full, they stop "thinking about it" and start "buying it."</p>
+                    </div>
+                </div>
+                <div class="task-item">
+                    <div class="task-checkbox"></div>
+                    <div class="task-content">
+                        <h5>Middle/High School Coach Bridge</h5>
+                        <p>Direct outreach to school coaches. Position yourself as the "Offseason Prep Partner." One coach recommendation can fill an entire group session overnight.</p>
+                    </div>
+                </div>
+                <div class="task-item">
+                    <div class="task-checkbox"></div>
+                    <div class="task-content">
+                        <h5>The "Season-Ready" Push</h5>
+                        <p>Create a countdown to football tryouts or season starts. Market the 5-week program as the "Competitive Edge" they need to make the starting roster.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </div>
+
+    <!-- Future Roadmap -->
+    <div class="roadmap-card">
+        <div class="roadmap-header">
+            <span class="material-symbols-outlined">rocket_launch</span>
+            <div class="roadmap-title">Future Growth Roadmap</div>
+        </div>
+        <p class="roadmap-content">The 90-day plan above builds your reputation through manual effort and word-of-mouth. Once your revenue is steady, we can automate your growth with these high-leverage systems:</p>
+        
+        <div class="roadmap-grid">
+            <div class="roadmap-item">
+                <h6>Phase 4: Passive Lead Gen</h6>
+                <p><strong>Local SEO:</strong> Rank #1 for "Youth Speed Training Hilton" so you get calls while you sleep.</p>
+            </div>
+            <div class="roadmap-item">
+                <h6>Phase 5: Brand Authority</h6>
+                <p><strong>Content Marketing:</strong> High-production case studies that prove your program is the best in the state.</p>
+            </div>
+            <div class="roadmap-item">
+                <h6>Phase 6: Retargeting</h6>
+                <p><strong>Email/SMS Marketing:</strong> Automated follow-ups to turn drop-ins into 12-month committed athletes.</p>
+            </div>
+        </div>
+    </div>
+
+    <footer>
+        <p>Prepared for Elite Performance &copy; 2024</p>
+        <p style="margin-top: 10px;">Confidential Business Strategy Roadmap</p>
+    </footer>
+
+</body>
+</html>

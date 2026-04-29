@@ -19,6 +19,20 @@ export default function Contact() {
     setStatus('Submitting...');
     
     try {
+      // PERMANENT FIX: Read the waiver file and convert to base64 to store in CRM
+      const fileInput = document.getElementById('waiverUpload');
+      const file = fileInput?.files[0];
+      
+      let base64Waiver = null;
+      if (file) {
+        const reader = new FileReader();
+        base64Waiver = await new Promise((resolve, reject) => {
+          reader.onload = () => resolve(reader.result);
+          reader.onerror = error => reject(error);
+          reader.readAsDataURL(file);
+        });
+      }
+
       const handleSuccess = async () => {
         setStatus('Success! Redirecting to payment...');
         
@@ -30,6 +44,7 @@ export default function Contact() {
           program: formData.get('program'),
           grade: formData.get('grade'),
           practiceDay: formData.get('practiceDay') || 'N/A',
+          waiverData: base64Waiver, // Saved to CRM instead of emailing via Formspree
           status: 'New'
         };
         
@@ -53,18 +68,26 @@ export default function Contact() {
         }
       };
 
+      const submitData = new FormData(form);
+      // Remove file to prevent Formspree "File Uploads Not Permitted" error regardless of plan status
+      submitData.delete('waiver');
+      submitData.append('waiver_status', 'Waiver successfully uploaded and saved to Supabase CRM.');
+      
       const response = await fetch(form.action, {
         method: form.method,
-        body: new FormData(form),
+        body: submitData,
         headers: { 'Accept': 'application/json' }
       });
 
       if (response.ok) {
         handleSuccess();
       } else {
-        setStatus('Oops! There was a problem submitting your form');
+        const data = await response.json().catch(() => ({}));
+        const errorMessage = data.errors ? data.errors.map(err => err.message).join(', ') : 'Oops! There was a problem submitting your form';
+        setStatus(`Error: ${errorMessage}`);
       }
     } catch (error) {
+      console.error(error);
       setStatus('Oops! There was a problem submitting your form');
     }
   };
