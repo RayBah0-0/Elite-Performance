@@ -6,6 +6,25 @@ export default function Admin() {
   const [password, setPassword] = useState('');
   const [leads, setLeads] = useState([]);
   const [activeTab, setActiveTab] = useState('board'); // 'board' or 'list'
+  
+  const downloadWaiver = (base64Data, athleteName) => {
+    if (!base64Data) return;
+    
+    // Create a temporary link and trigger download
+    const link = document.createElement('a');
+    link.href = base64Data;
+    
+    // Extract extension from base64 mime type if possible, default to .pdf or .docx
+    let extension = '.pdf';
+    if (base64Data.includes('wordprocessingml')) extension = '.docx';
+    else if (base64Data.includes('image/png')) extension = '.png';
+    else if (base64Data.includes('image/jpeg')) extension = '.jpg';
+    
+    link.download = `Waiver_${athleteName.replace(/\s+/g, '_')}${extension}`;
+    document.body.appendChild(link);
+    link.click();
+    document.body.removeChild(link);
+  };
 
   useEffect(() => {
     if (isAuthenticated) {
@@ -278,6 +297,21 @@ export default function Admin() {
                               <span className="material-symbols-outlined text-[14px]">fitness_center</span>
                               <span className="text-blue-400 font-bold">{lead.program}</span>
                             </div>
+
+                            {lead.waiverData ? (
+                              <button 
+                                onClick={() => downloadWaiver(lead.waiverData, lead.athleteName)}
+                                className="flex items-center gap-2 text-emerald-400 text-xs font-bold hover:text-emerald-300 transition-colors mt-3 bg-emerald-500/5 p-2 rounded-lg border border-emerald-500/20 w-full justify-center"
+                              >
+                                <span className="material-symbols-outlined text-[16px]">description</span>
+                                Download Signed Waiver
+                              </button>
+                            ) : (
+                              <div className="flex items-center gap-2 text-slate-500 text-[10px] mt-3 italic justify-center border border-white/5 p-2 rounded-lg bg-black/20">
+                                <span className="material-symbols-outlined text-[14px]">warning</span>
+                                No Waiver Attached
+                              </div>
+                            )}
                           </div>
                           
                           <div className="flex items-center justify-between pt-3 border-t border-white/5">
@@ -360,10 +394,21 @@ export default function Admin() {
                             {columns.map(col => <option key={col} value={col}>{col}</option>)}
                           </select>
                         </td>
-                        <td className="px-6 py-4 text-right">
-                          <button onClick={() => deleteLead(lead.id)} className="p-2 text-slate-600 hover:text-red-500 hover:bg-red-500/10 rounded-lg transition-all">
-                            <span className="material-symbols-outlined text-sm">delete</span>
-                          </button>
+                         <td className="px-6 py-4 text-right">
+                          <div className="flex items-center justify-end gap-2">
+                            {lead.waiverData && (
+                              <button 
+                                onClick={() => downloadWaiver(lead.waiverData, lead.athleteName)}
+                                title="Download Waiver"
+                                className="p-2 text-emerald-500 hover:bg-emerald-500/10 rounded-lg transition-all"
+                              >
+                                <span className="material-symbols-outlined text-sm">description</span>
+                              </button>
+                            )}
+                            <button onClick={() => deleteLead(lead.id)} className="p-2 text-slate-600 hover:text-red-500 hover:bg-red-500/10 rounded-lg transition-all">
+                              <span className="material-symbols-outlined text-sm">delete</span>
+                            </button>
+                          </div>
                         </td>
                       </tr>
                     ))}
