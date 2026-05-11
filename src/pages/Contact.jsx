@@ -106,7 +106,7 @@ export default function Contact() {
             <span className="material-symbols-outlined text-3xl mb-2 text-primary">description</span>
             <h3 className="mb-2 text-xl font-bold">1. Download & Sign Waiver</h3>
             <p className="mb-4 text-muted text-sm">You must download, sign, and re-attach the waiver below to complete your registration.</p>
-            <a href="/LIABILITY WAIVER.docx" download="Elite Performance Liability Waiver.docx" className="btn btn-outline" style={{ padding: '0.5rem 1rem', fontSize: '0.875rem' }}>Download Waiver Document</a>
+            <a href="/LIABILITY WAIVER.pdf" download="Elite Performance Liability Waiver.pdf" className="btn btn-outline" style={{ padding: '0.5rem 1rem', fontSize: '0.875rem' }}>Download Waiver Document</a>
           </div>
 
           <form 

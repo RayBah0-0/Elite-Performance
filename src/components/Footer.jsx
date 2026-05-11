@@ -10,7 +10,7 @@ export default function Footer() {
         <nav className="footer-nav">
           <Link to="/privacy">Privacy Policy</Link>
           <Link to="/terms">Terms of Service</Link>
-          <a href="/LIABILITY WAIVER.docx" download="Elite Performance Liability Waiver.docx">Liability Waiver</a>
+          <a href="/LIABILITY WAIVER.pdf" download="Elite Performance Liability Waiver.pdf">Liability Waiver</a>
           <Link to="/contact">Contact Us</Link>
         </nav>
         <p className="copyright text-muted text-sm uppercase tracking-widest text-center mt-6">
