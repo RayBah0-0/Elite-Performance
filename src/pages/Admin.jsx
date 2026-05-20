@@ -284,6 +284,12 @@ export default function Admin() {
                               <span className="material-symbols-outlined text-[14px]">mail</span>
                               <span className="truncate">{lead.email}</span>
                             </div>
+                            {lead.phone && lead.phone !== 'N/A' && (
+                              <div className="flex items-center gap-2 text-slate-400 text-xs">
+                                <span className="material-symbols-outlined text-[14px]">phone</span>
+                                <span>{lead.phone}</span>
+                              </div>
+                            )}
                             <div className="flex items-center gap-2 text-slate-400 text-xs">
                               <span className="material-symbols-outlined text-[14px]">school</span>
                               <span>Grade: <span className="text-slate-300 font-medium">{lead.grade || 'N/A'}</span></span>
@@ -391,7 +397,10 @@ export default function Admin() {
                         </td>
                         <td className="px-6 py-4">
                           <p className="text-sm text-slate-300 font-bold">{lead.parentName}</p>
-                          <p className="text-xs text-slate-500 mb-1">{lead.email}</p>
+                          <p className="text-xs text-slate-500 mb-0.5">{lead.email}</p>
+                          {lead.phone && lead.phone !== 'N/A' && (
+                            <p className="text-xs text-slate-400 font-medium">{lead.phone}</p>
+                          )}
                           <div className="text-[10px] text-slate-400 mt-2 p-1.5 bg-black/20 rounded border border-white/5" title={`Medical: ${lead.medicalInfo}\nEmergency: ${lead.emergencyContact}\nPickup: ${lead.pickupAuth}`}>
                             <span className="text-amber-400 font-bold">Med/Emerg Info Submitted</span>
                           </div>

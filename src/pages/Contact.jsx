@@ -36,6 +36,7 @@ export default function Contact() {
           parentName: formData.get('parentName'),
           athleteName: formData.get('athleteName'),
           email: formData.get('email'),
+          phone: formData.get('phone') || 'N/A',
           program: 'Training Session ($80)',
           grade: formData.get('grade') || 'Ages 7+',
           practiceDay: 'Wednesday',
@@ -129,6 +130,12 @@ export default function Contact() {
             <div>
               <label htmlFor="email" style={{ display: 'block', marginBottom: '0.5rem', color: 'var(--text-muted)' }}>Email Address</label>
               <input type="email" id="email" name="email" required 
+                style={{ width: '100%', padding: '0.75rem', borderRadius: '0.5rem', border: '1px solid var(--border-color)', background: 'rgba(0,0,0,0.2)', color: 'var(--white)' }} />
+            </div>
+
+            <div>
+              <label htmlFor="phone" style={{ display: 'block', marginBottom: '0.5rem', color: 'var(--text-muted)' }}>Phone Number</label>
+              <input type="tel" id="phone" name="phone" required placeholder="(555) 000-0000"
                 style={{ width: '100%', padding: '0.75rem', borderRadius: '0.5rem', border: '1px solid var(--border-color)', background: 'rgba(0,0,0,0.2)', color: 'var(--white)' }} />
             </div>
 
