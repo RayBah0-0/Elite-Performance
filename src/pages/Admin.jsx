@@ -298,6 +298,19 @@ export default function Admin() {
                               <span className="material-symbols-outlined text-[14px]">fitness_center</span>
                               <span className="text-blue-400 font-bold">{lead.program}</span>
                             </div>
+                            
+                            <div className="flex items-center gap-2 text-slate-400 text-xs mt-2 border-t border-white/5 pt-2">
+                              <span className="material-symbols-outlined text-[14px]">health_and_safety</span>
+                              <span className="font-medium text-amber-400/80 truncate" title={lead.medicalInfo || 'N/A'}>Medical: {lead.medicalInfo || 'None'}</span>
+                            </div>
+                            <div className="flex items-center gap-2 text-slate-400 text-xs">
+                              <span className="material-symbols-outlined text-[14px]">emergency</span>
+                              <span className="truncate" title={lead.emergencyContact || 'N/A'}>Emergency: {lead.emergencyContact || 'N/A'}</span>
+                            </div>
+                            <div className="flex items-center gap-2 text-slate-400 text-xs">
+                              <span className="material-symbols-outlined text-[14px]">directions_car</span>
+                              <span className="truncate" title={lead.pickupAuth || 'N/A'}>Pickup: {lead.pickupAuth || 'N/A'}</span>
+                            </div>
 
                             {lead.waiverData ? (
                               lead.waiverData.startsWith('data:') ? (
@@ -377,8 +390,11 @@ export default function Admin() {
                           <p className="text-xs text-slate-500">{lead.grade || 'N/A'}</p>
                         </td>
                         <td className="px-6 py-4">
-                          <p className="text-sm text-slate-300">{lead.parentName}</p>
-                          <p className="text-xs text-slate-500">{lead.email}</p>
+                          <p className="text-sm text-slate-300 font-bold">{lead.parentName}</p>
+                          <p className="text-xs text-slate-500 mb-1">{lead.email}</p>
+                          <div className="text-[10px] text-slate-400 mt-2 p-1.5 bg-black/20 rounded border border-white/5" title={`Medical: ${lead.medicalInfo}\nEmergency: ${lead.emergencyContact}\nPickup: ${lead.pickupAuth}`}>
+                            <span className="text-amber-400 font-bold">Med/Emerg Info Submitted</span>
+                          </div>
                         </td>
                         <td className="px-6 py-4">
                           <span className="px-3 py-1 rounded-full bg-blue-500/10 text-blue-400 text-xs font-bold border border-blue-500/20">
