@@ -6,25 +6,22 @@ export default function Pricing() {
       <div className="container fade-in visible">
         <div className="section-header text-center">
           <h2>Simple <span className="text-gradient">Pricing</span></h2>
-          <p>Limited to 24 athletes per group. Secure your spot today.</p>
+          <p>Year-round athletic development. Limited group sizes.</p>
         </div>
-        <div className="pricing-grid">
+        <div className="pricing-grid" style={{ gridTemplateColumns: '1fr', maxWidth: '400px', margin: '0 auto' }}>
           <div className="pricing-card popular">
-            <div className="popular-badge">Most Popular</div>
+            <div className="popular-badge">Year-Round Training</div>
             <div className="pricing-header">
-              <h3>1x Per Week</h3>
-              <div className="price"><span>$</span>125</div>
-              <p className="pricing-desc">5 Week Program</p>
+              <h3>Training Session</h3>
+              <div className="price"><span>$</span>80</div>
+              <p className="pricing-desc">60 Minute Session</p>
             </div>
-            <Link to="/contact" state={{ plan: '1x' }} className="btn btn-primary w-full">Select Plan</Link>
-          </div>
-          <div className="pricing-card">
-            <div className="pricing-header">
-              <h3>2x Per Week</h3>
-              <div className="price"><span>$</span>200</div>
-              <p className="pricing-desc">5 Week Program</p>
-            </div>
-            <Link to="/contact" state={{ plan: '2x' }} className="btn btn-outline w-full">Select Plan</Link>
+            <ul className="pricing-features mb-6 text-left text-slate-300 text-sm space-y-3">
+              <li className="flex items-center gap-2"><span className="material-symbols-outlined text-emerald-400 text-sm">check_circle</span> Ages 7 and Up</li>
+              <li className="flex items-center gap-2"><span className="material-symbols-outlined text-emerald-400 text-sm">check_circle</span> Elite Coaching</li>
+              <li className="flex items-center gap-2"><span className="material-symbols-outlined text-emerald-400 text-sm">check_circle</span> Speed & Agility Focus</li>
+            </ul>
+            <Link to="/contact" className="btn btn-primary w-full">Start Training Today</Link>
           </div>
         </div>
       </div>

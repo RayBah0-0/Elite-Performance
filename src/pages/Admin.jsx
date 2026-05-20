@@ -117,9 +117,10 @@ export default function Admin() {
   // Real revenue calculation (rough estimate based on known plan prices)
   const calculateRevenue = () => {
     return leads.filter(l => l.status === 'Paid').reduce((total, lead) => {
-      if (lead.program === '1x Weekly Training') return total + 149;
-      if (lead.program === '2x Weekly Training') return total + 249;
-      return total + 200; // default average
+      if (lead.program === 'Training Session ($80)') return total + 80;
+      if (lead.program && lead.program.includes('1x')) return total + 125;
+      if (lead.program && lead.program.includes('2x')) return total + 200;
+      return total + 80; // default average
     }, 0);
   };
 
@@ -299,13 +300,20 @@ export default function Admin() {
                             </div>
 
                             {lead.waiverData ? (
-                              <button 
-                                onClick={() => downloadWaiver(lead.waiverData, lead.athleteName)}
-                                className="flex items-center gap-2 text-emerald-400 text-xs font-bold hover:text-emerald-300 transition-colors mt-3 bg-emerald-500/5 p-2 rounded-lg border border-emerald-500/20 w-full justify-center"
-                              >
-                                <span className="material-symbols-outlined text-[16px]">description</span>
-                                Download Signed Waiver
-                              </button>
+                              lead.waiverData.startsWith('data:') ? (
+                                <button 
+                                  onClick={() => downloadWaiver(lead.waiverData, lead.athleteName)}
+                                  className="flex items-center gap-2 text-emerald-400 text-xs font-bold hover:text-emerald-300 transition-colors mt-3 bg-emerald-500/5 p-2 rounded-lg border border-emerald-500/20 w-full justify-center"
+                                >
+                                  <span className="material-symbols-outlined text-[16px]">description</span>
+                                  Download Signed Waiver
+                                </button>
+                              ) : (
+                                <div className="mt-3 p-2 rounded-lg bg-emerald-500/10 border border-emerald-500/20 text-emerald-400 text-[10px] leading-tight">
+                                  <span className="material-symbols-outlined text-[12px] inline-block mr-1 align-text-bottom">verified</span>
+                                  {lead.waiverData}
+                                </div>
+                              )
                             ) : (
                               <div className="flex items-center gap-2 text-slate-500 text-[10px] mt-3 italic justify-center border border-white/5 p-2 rounded-lg bg-black/20">
                                 <span className="material-symbols-outlined text-[14px]">warning</span>
@@ -397,13 +405,19 @@ export default function Admin() {
                          <td className="px-6 py-4 text-right">
                           <div className="flex items-center justify-end gap-2">
                             {lead.waiverData && (
-                              <button 
-                                onClick={() => downloadWaiver(lead.waiverData, lead.athleteName)}
-                                title="Download Waiver"
-                                className="p-2 text-emerald-500 hover:bg-emerald-500/10 rounded-lg transition-all"
-                              >
-                                <span className="material-symbols-outlined text-sm">description</span>
-                              </button>
+                              lead.waiverData.startsWith('data:') ? (
+                                <button 
+                                  onClick={() => downloadWaiver(lead.waiverData, lead.athleteName)}
+                                  title="Download Waiver"
+                                  className="p-2 text-emerald-500 hover:bg-emerald-500/10 rounded-lg transition-all"
+                                >
+                                  <span className="material-symbols-outlined text-sm">description</span>
+                                </button>
+                              ) : (
+                                <div title={lead.waiverData} className="p-2 text-emerald-500 rounded-lg" style={{ cursor: 'help' }}>
+                                  <span className="material-symbols-outlined text-sm">verified</span>
+                                </div>
+                              )
                             )}
                             <button onClick={() => deleteLead(lead.id)} className="p-2 text-slate-600 hover:text-red-500 hover:bg-red-500/10 rounded-lg transition-all">
                               <span className="material-symbols-outlined text-sm">delete</span>
