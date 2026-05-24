@@ -4,12 +4,16 @@ import { supabase } from '../supabaseClient';
 
 export default function Contact() {
   const [status, setStatus] = useState('');
+  const [selectedProgram, setSelectedProgram] = useState('');
   const location = useLocation();
 
   useEffect(() => {
     // Scroll to top when loading
     window.scrollTo(0, 0);
-  }, []);
+    if (location.state?.selectedProgram) {
+      setSelectedProgram(location.state.selectedProgram);
+    }
+  }, [location.state]);
 
   const handleSubmit = async (e) => {
     e.preventDefault();
@@ -123,7 +127,7 @@ export default function Contact() {
 
             <div>
               <label htmlFor="program" style={{ display: 'block', marginBottom: '0.5rem', color: 'var(--text-muted)' }}>Select Program</label>
-              <select id="program" name="program" required defaultValue=""
+              <select id="program" name="program" required value={selectedProgram} onChange={(e) => setSelectedProgram(e.target.value)}
                 style={{ width: '100%', padding: '0.75rem', borderRadius: '0.5rem', border: '1px solid var(--border-color)', background: 'rgba(0,0,0,0.2)', color: 'var(--white)' }}>
                 <option value="" disabled>Choose a training program...</option>
                 <option value="1-on-1 Football Training (45min) - $50">1-on-1 Football Training (45min) - $50</option>

@@ -37,7 +37,7 @@ export default function Pricing() {
               <li className="flex items-center gap-2"><span className="material-symbols-outlined text-emerald-400 text-sm">check_circle</span> Competitive Environment</li>
               <li className="flex items-center gap-2"><span className="material-symbols-outlined text-emerald-400 text-sm">check_circle</span> At Your Home or Park</li>
             </ul>
-            <Link to="/contact" className="btn btn-primary w-full">Select Program</Link>
+            <Link to="/contact" state={{ selectedProgram: '2-on-1 Football Training (50min) - $80' }} className="btn btn-primary w-full">Select Program</Link>
           </div>
 
           {/* Program 3 */}
