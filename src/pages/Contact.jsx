@@ -37,7 +37,7 @@ export default function Contact() {
           athleteName: formData.get('athleteName'),
           email: formData.get('email'),
           phone: formData.get('phone') || 'N/A',
-          program: 'Training Session ($80)',
+          program: formData.get('program'),
           grade: formData.get('grade') || 'Ages 7+',
           practiceDay: 'Wednesday',
           emergencyContact: formData.get('emergencyContact') || 'N/A',
@@ -97,8 +97,8 @@ export default function Contact() {
           <div className="waiver-card mb-8 text-center" style={{ background: 'rgba(255,255,255,0.03)', padding: '1.5rem', borderRadius: '0.5rem', border: '1px solid var(--border-color)' }}>
             <span className="material-symbols-outlined text-3xl mb-2 text-primary">sports_gymnastics</span>
             <h3 className="mb-2 text-xl font-bold">Year-Round Training</h3>
-            <p className="mb-4 text-muted text-sm">Wednesday Sessions (4:30 PM – 8:00 PM) for Ages 7 and Up.</p>
-            <p className="text-emerald-400 font-bold">$80 / 60-Minute Session</p>
+            <p className="mb-4 text-muted text-sm">Sessions at your home or local park for Ages 7 and Up.</p>
+            <p className="text-emerald-400 font-bold">Select your program below to view pricing.</p>
           </div>
 
           <form 
@@ -119,6 +119,18 @@ export default function Contact() {
               <label htmlFor="athleteName" style={{ display: 'block', marginBottom: '0.5rem', color: 'var(--text-muted)' }}>Athlete Name</label>
               <input type="text" id="athleteName" name="athleteName" required 
                 style={{ width: '100%', padding: '0.75rem', borderRadius: '0.5rem', border: '1px solid var(--border-color)', background: 'rgba(0,0,0,0.2)', color: 'var(--white)' }} />
+            </div>
+
+            <div>
+              <label htmlFor="program" style={{ display: 'block', marginBottom: '0.5rem', color: 'var(--text-muted)' }}>Select Program</label>
+              <select id="program" name="program" required defaultValue=""
+                style={{ width: '100%', padding: '0.75rem', borderRadius: '0.5rem', border: '1px solid var(--border-color)', background: 'rgba(0,0,0,0.2)', color: 'var(--white)' }}>
+                <option value="" disabled>Choose a training program...</option>
+                <option value="1-on-1 Football Training (45min) - $50">1-on-1 Football Training (45min) - $50</option>
+                <option value="2-on-1 Football Training (50min) - $80">2-on-1 Football Training (50min) - $80</option>
+                <option value="3-4 on 1 Small Group Football (60min) - $120">3-4 on 1 Small Group Football (60min) - $120</option>
+                <option value="Strength, Agility, Speed (2-4 Kids, 45min)">Strength, Agility, Speed (2-4 Kids, 45min) - $30/kid (2 kids) or $80 total (4 kids)</option>
+              </select>
             </div>
 
             <div>

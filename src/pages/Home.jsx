@@ -8,8 +8,8 @@ export default function Home() {
 
   const faqs = [
     { q: "What ages do you train?", a: "We specialize in training young athletes ages 7 and up, focusing on foundational mechanics through advanced athletic development." },
-    { q: "Where are sessions held?", a: "Our sessions take place at 1300 Hilton Parma Corners Rd, Hilton, NY. We use high-quality facilities suited for athletic development." },
-    { q: "How does pricing work?", a: "Training is a flat $80 per 60-minute session. We don't lock you into complex monthly subscriptions or memberships." },
+    { q: "Where are sessions held?", a: "We come to you! Sessions take place at your home or a local park. We bring the equipment and expertise directly to your preferred location." },
+    { q: "How does pricing work?", a: "Pricing varies by program, starting at $50 per session for 1-on-1 training. We offer 1-on-1, small group (2-4 athletes), and speed/agility focused sessions." },
     { q: "Is the liability waiver required?", a: "Yes, for the safety of all participants, a digital liability waiver must be signed during the registration process." }
   ];
 
@@ -54,7 +54,7 @@ export default function Home() {
               </div>
             </div>
             <h1 className="hero-title">Build Faster, <span className="text-gradient">Stronger</span>, More <br/> Confident <span className="italic">Young Athletes</span></h1>
-            <p className="hero-subtitle">Speed, strength, agility, and football-focused training for ages 7 and up — led by certified coaching in Hilton, NY.</p>
+            <p className="hero-subtitle">Speed, strength, agility, and football-focused training for ages 7 and up. We come to your home or local park!</p>
             <div className="hero-actions">
               <Link to="/contact" className="btn btn-primary btn-large">
                 Reserve Your Spot Now
@@ -75,7 +75,7 @@ export default function Home() {
           <div className="trust-item"><span className="material-symbols-outlined trust-icon">health_and_safety</span><h4>Heads Up Concussion Certified</h4></div>
           <div className="trust-item"><span className="material-symbols-outlined trust-icon">medical_services</span><h4>CPR & AED Certified</h4></div>
           <div className="trust-item"><span className="material-symbols-outlined trust-icon">group</span><h4>Structured Age-Based Training</h4></div>
-          <div className="trust-item"><span className="material-symbols-outlined trust-icon">location_on</span><h4>Local Hilton, NY Program</h4></div>
+          <div className="trust-item"><span className="material-symbols-outlined trust-icon">location_on</span><h4>We Come To You (Home/Park)</h4></div>
         </div>
       </section>
 
@@ -98,7 +98,7 @@ export default function Home() {
             <div className="why-item" style={{ textAlign: 'left', padding: '2rem', background: 'rgba(255,255,255,0.03)', borderRadius: '1rem', border: '1px solid rgba(255,255,255,0.1)' }}>
               <span className="material-symbols-outlined text-primary mb-4" style={{ fontSize: '2.5rem' }}>groups</span>
               <h3 className="font-bold text-white mb-2 text-xl">No Subscription Traps</h3>
-              <p className="text-slate-400 text-sm">Pay per session at $80 flat. We believe in earning your business through results, not complex recurring contracts.</p>
+              <p className="text-slate-400 text-sm">Pay per session starting at $50. We believe in earning your business through results, not complex recurring contracts.</p>
             </div>
             <div className="why-item" style={{ textAlign: 'left', padding: '2rem', background: 'rgba(255,255,255,0.03)', borderRadius: '1rem', border: '1px solid rgba(255,255,255,0.1)' }}>
               <span className="material-symbols-outlined text-primary mb-4" style={{ fontSize: '2.5rem' }}>psychology</span>
@@ -119,7 +119,7 @@ export default function Home() {
             <div className="step-connector"></div>
             <div className="step"><div className="step-number">2</div><h3>Coach Coordination</h3><p className="text-slate-400 text-xs mt-2 text-center max-w-[200px] mx-auto">We personally reach out to confirm your spot for an upcoming Wednesday session.</p></div>
             <div className="step-connector"></div>
-            <div className="step"><div className="step-number">3</div><h3>Show Up & Train</h3><p className="text-slate-400 text-xs mt-2 text-center max-w-[200px] mx-auto">Bring your best effort. Pay the $80 session fee. See the results.</p></div>
+            <div className="step"><div className="step-number">3</div><h3>Show Up & Train</h3><p className="text-slate-400 text-xs mt-2 text-center max-w-[200px] mx-auto">Bring your best effort to your home or park, pay the session fee, and see the results.</p></div>
           </div>
         </div>
       </section>

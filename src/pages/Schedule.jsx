@@ -9,7 +9,7 @@ export default function Schedule() {
             <h2>Training <span className="text-gradient">Schedule</span></h2>
             <p className="location-text" style={{ marginBottom: '1.5rem', marginTop: '1.5rem' }}>
               <span className="material-symbols-outlined text-primary">location_on</span>
-              1300 Hilton Parma Corners Rd, Hilton, NY
+              At your home or a local park (Hilton, NY & Surrounding Areas)
             </p>
           </div>
         </div>
