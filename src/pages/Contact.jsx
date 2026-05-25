@@ -130,7 +130,7 @@ export default function Contact() {
               <select id="program" name="program" required value={selectedProgram} onChange={(e) => setSelectedProgram(e.target.value)}
                 style={{ width: '100%', padding: '0.75rem', borderRadius: '0.5rem', border: '1px solid var(--border-color)', background: 'rgba(0,0,0,0.2)', color: 'var(--white)' }}>
                 <option value="" disabled>Choose a training program...</option>
-                <option value="1-on-1 Football Training (45min) - $60">1-on-1 Football Training (45min) - $60</option>
+                <option value="1-on-1 Football Training (45min) - $50">1-on-1 Football Training (45min) - $50</option>
                 <option value="2-on-1 Football Training (50min) - $80">2-on-1 Football Training (50min) - $80</option>
                 <option value="3-4 on 1 Small Group Football (60min) - $120">3-4 on 1 Small Group Football (60min) - $120</option>
                 <option value="Strength, Agility, Speed (2-4 Kids, 45min)">Strength, Agility, Speed (2-4 Kids, 45min) - $30/kid (2 kids) or $80 total (4 kids)</option>
