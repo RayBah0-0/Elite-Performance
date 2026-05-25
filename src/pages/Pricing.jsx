@@ -13,7 +13,7 @@ export default function Pricing() {
           <div className="pricing-card">
             <div className="pricing-header">
               <h3>1-on-1 Football Training</h3>
-              <div className="price"><span>$</span>50</div>
+              <div className="price"><span>$</span>60</div>
               <p className="pricing-desc">45 Minute Session</p>
             </div>
             <ul className="pricing-features mb-6 text-left text-slate-300 text-sm space-y-3">
@@ -21,7 +21,7 @@ export default function Pricing() {
               <li className="flex items-center gap-2"><span className="material-symbols-outlined text-emerald-400 text-sm">check_circle</span> Personalized Focus</li>
               <li className="flex items-center gap-2"><span className="material-symbols-outlined text-emerald-400 text-sm">check_circle</span> At Your Home or Park</li>
             </ul>
-            <Link to="/contact" className="btn btn-outline w-full">Select Program</Link>
+            <Link to="/contact" state={{ selectedProgram: '1-on-1 Football Training (45min) - $60' }} className="btn btn-outline w-full">Select Program</Link>
           </div>
 
           {/* Program 2 */}
@@ -52,7 +52,7 @@ export default function Pricing() {
               <li className="flex items-center gap-2"><span className="material-symbols-outlined text-emerald-400 text-sm">check_circle</span> Team Dynamics</li>
               <li className="flex items-center gap-2"><span className="material-symbols-outlined text-emerald-400 text-sm">check_circle</span> At Your Home or Park</li>
             </ul>
-            <Link to="/contact" className="btn btn-outline w-full">Select Program</Link>
+            <Link to="/contact" state={{ selectedProgram: '3-4 on 1 Small Group Football (60min) - $120' }} className="btn btn-outline w-full">Select Program</Link>
           </div>
 
           {/* Program 4 */}
@@ -67,7 +67,7 @@ export default function Pricing() {
               <li className="flex items-center gap-2"><span className="material-symbols-outlined text-emerald-400 text-sm">check_circle</span> 4 Kids: $80 Total</li>
               <li className="flex items-center gap-2"><span className="material-symbols-outlined text-emerald-400 text-sm">check_circle</span> At Your Home or Park</li>
             </ul>
-            <Link to="/contact" className="btn btn-outline w-full">Select Program</Link>
+            <Link to="/contact" state={{ selectedProgram: 'Strength, Agility, Speed (2-4 Kids, 45min)' }} className="btn btn-outline w-full">Select Program</Link>
           </div>
         </div>
       </div>
